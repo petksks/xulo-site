@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Xulo – Mexikansk Restaurang & Bar i Stockholm</title>
+  <meta name="description" content="Autentisk mexikansk mat i Stockholm. Handgjorda tortillas, ceviche, birria tacos & margaritas. Glutenfritt, veganskt. Luntmakargatan 44.">
+  <link rel="stylesheet" href="styles.css?v=1776860350096">
+  <style>
+    /* ---- HOME-SPECIFIC ---- */
+
+    /* Story section */
+    .story { padding: 8rem 0; }
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .story-img-wrap {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 24px 64px rgba(11,59,42,0.15);
+    }
+    .story-img-wrap img {
+      width: 100%; aspect-ratio: 3/4;
+      object-fit: cover; object-position: top;
+    }
+    .story-img-badge {
+      position: absolute;
+      bottom: 1.5rem; left: 1.5rem;
+      background: var(--magenta);
+      color: #fff;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 0.6rem 1.2rem;
+      border-radius: 100px;
+    }
+    .story-text p {
+      font-size: 1.1rem;
+      color: var(--gray);
+      margin-bottom: 1.5rem;
+      line-height: 1.85;
+    }
+    .story-text p:last-of-type { margin-bottom: 2rem; }
+
+    /* Features strip */
+    .features {
+      background: var(--green);
+      padding: 3.5rem 0;
+    }
+    .features-row {
+      display: flex;
+      justify-content: center;
+      gap: clamp(2rem, 5vw, 5rem);
+      flex-wrap: wrap;
+    }
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      color: rgba(255,255,255,0.9);
+    }
+    .feature-icon {
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .feature-icon svg { width: 22px; height: 22px; }
+    .feature-text {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    /* Gallery */
+    .gallery { padding: 7rem 0 6rem; }
+    .gallery-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 3rem;
+      padding: 0 clamp(1.5rem, 4vw, 4rem);
+    }
+
+    /* Menu preview */
+    .menu-preview { padding: 7rem 0; background: #fff; }
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .menu-card {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      aspect-ratio: 3/4;
+      cursor: pointer;
+    }
+    .menu-card img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s var(--ease-out);
+    }
+    .menu-card:hover img { transform: scale(1.06); }
+    .menu-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(11,59,42,0.85) 0%, transparent 60%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 2rem;
+    }
+    .menu-card-overlay h3 {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.3rem;
+    }
+    .menu-card-overlay span {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.7);
+    }
+
+    /* CTA band */
+    .cta-band {
+      position: relative;
+      padding: 8rem 0;
+      text-align: center;
+      overflow: hidden;
+    }
+    .cta-band-bg {
+      position: absolute;
+      inset: 0;
+    }
+    .cta-band-bg img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    .cta-band-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(11,59,42,0.88), rgba(11,59,42,0.75));
+    }
+    .cta-band-content {
+      position: relative; z-index: 2;
+      color: #fff;
+    }
+    .cta-band-content h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 800;
+      margin-bottom: 1.25rem;
+      line-height: 1.1;
+    }
+    .cta-band-content p {
+      font-size: 1.2rem;
+      opacity: 0.85;
+      margin-bottom: 2.5rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Contact preview */
+    .contact-preview { padding: 7rem 0; }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+      margin-top: 3rem;
+    }
+    .contact-details { display: flex; flex-direction: column; gap: 2rem; }
+    .contact-item h4 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--dark);
+      margin-bottom: 0.4rem;
+    }
+    .contact-item p {
+      font-size: 1rem;
+      color: var(--gray);
+      line-height: 1.7;
+    }
+    .contact-map {
+      width: 100%;
+      aspect-ratio: 4/3;
+      border-radius: 16px;
+      overflow: hidden;
+      background: var(--cream-dark);
+      border: 0;
+    }
+
+    @media (max-width: 900px) {
+      .story-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .story-img-wrap img { aspect-ratio: 3/4; }
+      .menu-grid { grid-template-columns: 1fr; max-width: 400px; margin-left: auto; margin-right: auto; }
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="site-nav nav--top">
+  <div class="nav-inner">
+    <a href="hem.html"><img src="img/xulo-logo-dark.png" alt="Xulo" class="nav-logo-img"></a>
+    <ul class="nav-links">
+      <li><a href="hem.html" class="active">Hem</a></li>
+      <li><a href="meny.html">Meny</a></li>
+      <li><a href="var-historia.html">Vår Historia</a></li>
+      <li><a href="catering.html">Catering</a></li>
+      <li><a href="lunch.html">Lunch</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+      <li><a href="#" class="nav-cta">BOKA BORD</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Meny">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu">
+  <button class="mobile-close" aria-label="Stäng">&times;</button>
+  <a href="hem.html">Hem</a>
+  <a href="meny.html">Meny</a>
+  <a href="var-historia.html">Vår Historia</a>
+  <a href="catering.html">Catering</a>
+  <a href="lunch.html">Lunch</a>
+  <a href="kontakt.html">Kontakt</a>
+  <a href="#" class="btn btn--magenta" style="margin-top:1rem">Boka Bord</a>
+</div>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-bg">
+    <img src="img/interior-warm-window.webp" alt="Xulo restaurang interiör">
+    <div class="hero-overlay"></div>
+  </div>
+  <div class="hero-content">
+    <img src="img/xulo-hero-logo.png" alt="Xulo – Cocina de México" class="hero-logo">
+    <p class="hero-tagline">Autentisk Mexikansk Mat · Stockholm</p>
+    <a href="#" class="hero-cta">Boka Bord</a>
+  </div>
+  <div class="hero-scroll">
+    <span>Scrolla</span>
+    <div class="hero-scroll-line"></div>
+  </div>
+</section>
+
+<!-- Story -->
+<section class="story">
+  <div class="container">
+    <div class="story-grid">
+      <div class="story-img-wrap reveal">
+        <img src="img/jonathan-exterior.jpg" alt="Jonathan, grundare av Xulo" data-parallax="0.04">
+        <div class="story-img-badge">Sedan 2021</div>
+      </div>
+      <div class="story-text">
+        <div class="section-label reveal">Välkommen till Xulo</div>
+        <h2 class="section-title reveal reveal-delay-1">Från <em>Guadalajara</em> till Stockholm</h2>
+        <p class="reveal reveal-delay-2">Jonathan öppnade sin första taquería i Guadalajara när han var 17 år. Sedan dess har han drivit restauranger i Mexikanska Karibien, träffat sin svenska fru, och flyttat till Stockholm med en dröm – att dela äkta mexikansk matkultur med Sverige.</p>
+        <p class="reveal reveal-delay-2">På bara 17 dagar byggde han Xulo med egna händer. Allt lagas från grunden varje dag, inklusive handgjorda majstortillas. Menyn är hans familjs historia på en tallrik.</p>
+        <a href="var-historia.html" class="btn btn--outline reveal reveal-delay-3">Läs Vår Historia</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features Strip -->
+<section class="features">
+  <div class="container">
+    <div class="features-row">
+      <div class="feature-item">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12l2.5 2.5L16 9"/></svg>
+        </div>
+        <span class="feature-text">100% Glutenfritt</span>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><circle cx="9" cy="10" r="1" fill="currentColor"/><circle cx="15" cy="10" r="1" fill="currentColor"/></svg>
+        </div>
+        <span class="feature-text">Veganska Alternativ</span>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3c-1.5 0-3 .5-3 2v4c0 1.5 1.5 2 3 2s3-.5 3-2V5c0-1.5-1.5-2-3-2z"/><path d="M19 14c0 3.87-3.13 7-7 7s-7-3.13-7-7"/></svg>
+        </div>
+        <span class="feature-text">Handgjorda Tortillas</span>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <span class="feature-text">Lagat med Kärlek</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section class="gallery">
+  <div class="gallery-header">
+    <div>
+      <div class="section-label reveal">Upplev Xulo</div>
+      <h2 class="section-title reveal reveal-delay-1">Smaker & Stämning</h2>
+    </div>
+    <a href="meny.html" class="btn btn--green reveal">Se Menyn</a>
+  </div>
+  <div class="gallery-track">
+    <div class="gallery-card"><img src="img/tacos-blue-plate.webp" alt="Tacos"></div>
+    <div class="gallery-card"><img src="img/ceviche-blue-bowl.webp" alt="Ceviche"></div>
+    <div class="gallery-card"><img src="img/interior-mural-bar.webp" alt="Interiör"></div>
+    <div class="gallery-card"><img src="img/birria-quesadillas-moody.webp" alt="Birria Quesadillas"></div>
+    <div class="gallery-card"><img src="img/burrito-cocktails-fiesta.webp" alt="Cocktails & Burrito"></div>
+    <div class="gallery-card"><img src="img/interior-warm-window.webp" alt="Matsal"></div>
+  </div>
+</section>
+
+<!-- Menu Preview -->
+<section class="menu-preview">
+  <div class="container">
+    <div style="text-align:center">
+      <div class="section-label reveal">Vår Meny</div>
+      <h2 class="section-title reveal reveal-delay-1">Smaka på <em>Mexiko</em></h2>
+    </div>
+    <div class="menu-grid">
+      <a href="meny.html" class="menu-card reveal">
+        <img src="img/tacos-blue-plate.webp" alt="Tacos">
+        <div class="menu-card-overlay">
+          <h3>Tacos</h3>
+          <span>Pastor, Birria, Carnitas & mer</span>
+        </div>
+      </a>
+      <a href="meny.html" class="menu-card reveal reveal-delay-1">
+        <img src="img/ceviche-blue-bowl.webp" alt="Ceviche">
+        <div class="menu-card-overlay">
+          <h3>Ceviche</h3>
+          <span>Mazatlán style & Ceviche Negro</span>
+        </div>
+      </a>
+      <a href="meny.html" class="menu-card reveal reveal-delay-2">
+        <img src="img/burrito-cocktails-fiesta.webp" alt="Cocktails">
+        <div class="menu-card-overlay">
+          <h3>Cocktails</h3>
+          <span>Margaritas, Micheladas & mer</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Band -->
+<section class="cta-band">
+  <div class="cta-band-bg">
+    <img src="img/interior-warm-window.webp" alt="">
+    <div></div>
+  </div>
+  <div class="cta-band-content container">
+    <h2 class="reveal">Boka ditt bord<br>på Xulo</h2>
+    <p class="reveal reveal-delay-1">Som att besöka en mexikansk kusins kök – bara med bättre margaritas.</p>
+    <a href="#" class="btn btn--magenta reveal reveal-delay-2">Boka Bord</a>
+  </div>
+</section>
+
+<!-- Contact Preview -->
+<section class="contact-preview">
+  <div class="container">
+    <div class="section-label reveal">Hitta Hit</div>
+    <h2 class="section-title reveal reveal-delay-1">Besök Oss</h2>
+    <div class="contact-grid">
+      <div class="contact-details reveal reveal-delay-2">
+        <div class="contact-item">
+          <h4>Adress</h4>
+          <p>Luntmakargatan 44<br>113 37 Stockholm</p>
+        </div>
+        <div class="contact-item">
+          <h4>Öppettider</h4>
+          <p>Måndag–Torsdag: 11:00–21:00<br>Fredag: 11:00–22:00<br>Lördag: 12:00–22:00<br>Söndag: 12:00–20:00</p>
+        </div>
+        <div class="contact-item">
+          <h4>Kontakt</h4>
+          <p>info@xulo.se<br>08-462 99 99</p>
+        </div>
+        <a href="kontakt.html" class="btn btn--outline" style="align-self:start">Kontakta Oss</a>
+      </div>
+      <iframe class="contact-map reveal reveal-delay-3" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2034.5!2d18.0585!3d59.3395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9d5d5e2e6b5d%3A0x0!2sLuntmakargatan%2044%2C%20113%2037%20Stockholm!5e0!3m2!1ssv!2sse!4v1" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <img src="img/xulo-logo-dark.png" alt="Xulo" class="footer-brand-logo">
+      <div class="footer-tagline">Cocina de México · Stockholm</div>
+    </div>
+    <div class="footer-grid">
+      <div class="footer-col"><h4>Besök</h4><a href="hem.html">Hem</a><a href="meny.html">Meny</a><a href="lunch.html">Lunch</a><a href="var-historia.html">Vår Historia</a></div>
+      <div class="footer-col"><h4>Mer</h4><a href="catering.html">Catering</a><a href="kontakt.html">Kontakt</a><a href="#">Integritetspolicy</a></div>
+      <div class="footer-col"><h4>Följ Oss</h4><a href="#">Instagram</a><a href="#">Facebook</a></div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span class="footer-year">2026</span> Xulo AB · Org.nr 559317-1548</span>
+      <span>Powered by RiseRank</span>
+      <span>Torsgatan 49, 113 37 Stockholm</span>
+    </div>
+  </div>
+</footer>
+
+<script src="shared.js"></script>
+</body>
+</html>

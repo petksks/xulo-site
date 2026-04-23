@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vår Historia – Xulo</title>
+  <link rel="stylesheet" href="styles.css?v=1776860350096">
+  <style>
+    .timeline { padding: 4rem 0 8rem; }
+    .timeline-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      margin-bottom: 6rem;
+    }
+    .timeline-block:nth-child(even) { direction: rtl; }
+    .timeline-block:nth-child(even) > * { direction: ltr; }
+    .timeline-img {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 56px rgba(11,59,42,0.12);
+    }
+    .timeline-img img { width:100%; aspect-ratio:4/5; object-fit:cover; object-position:top; }
+    .timeline-year {
+      font-family: var(--font-display);
+      font-size: 0.85rem; font-weight: 700;
+      color: var(--magenta);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    .timeline-heading {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 800;
+      color: var(--dark);
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+    }
+    .timeline-text p {
+      font-size: 1.05rem;
+      color: var(--gray);
+      line-height: 1.85;
+      margin-bottom: 1.25rem;
+    }
+
+    .quote-section {
+      background: var(--green);
+      padding: 6rem 0;
+      text-align: center;
+    }
+    .quote-section blockquote {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.35;
+      max-width: 800px;
+      margin: 0 auto 1.5rem;
+    }
+    .quote-section cite {
+      font-family: var(--font-body);
+      font-style: normal;
+      color: var(--yellow);
+      font-size: 1rem;
+    }
+
+    .values {
+      padding: 7rem 0;
+      text-align: center;
+    }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+      margin-top: 3rem;
+    }
+    .value-card {
+      padding: 2.5rem 2rem;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+    }
+    .value-number {
+      font-family: var(--font-display);
+      font-size: 3rem; font-weight: 800;
+      color: var(--magenta);
+      margin-bottom: 0.5rem;
+    }
+    .value-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.2rem; font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 0.5rem;
+    }
+    .value-card p { font-size: 0.95rem; color: var(--gray); line-height: 1.7; }
+
+    @media (max-width: 900px) {
+      .timeline-block, .timeline-block:nth-child(even) {
+        grid-template-columns: 1fr;
+        direction: ltr;
+        gap: 2rem;
+      }
+      .timeline-img img { aspect-ratio: 4/3; }
+      .values-grid { grid-template-columns: 1fr; max-width: 400px; margin-left:auto; margin-right:auto; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="site-nav nav--scrolled">
+  <div class="nav-inner">
+    <a href="hem.html"><img src="img/xulo-logo-dark.png" alt="Xulo" class="nav-logo-img"></a>
+    <ul class="nav-links">
+      <li><a href="hem.html">Hem</a></li>
+      <li><a href="meny.html">Meny</a></li>
+      <li><a href="var-historia.html" class="active">Vår Historia</a></li>
+      <li><a href="catering.html">Catering</a></li>
+      <li><a href="lunch.html">Lunch</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+      <li><a href="#" class="nav-cta">BOKA BORD</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Meny"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-menu">
+  <button class="mobile-close" aria-label="Stäng">&times;</button>
+  <a href="hem.html">Hem</a><a href="meny.html">Meny</a><a href="var-historia.html">Vår Historia</a>
+  <a href="catering.html">Catering</a><a href="lunch.html">Lunch</a><a href="kontakt.html">Kontakt</a>
+  <a href="#" class="btn btn--magenta" style="margin-top:1rem">Boka Bord</a>
+</div>
+
+<section class="page-hero">
+  <div class="container">
+    <h1>Vår Historia</h1>
+    <p>Från Guadalajara till Stockholm – driven av passion för äkta smaker</p>
+  </div>
+</section>
+
+<section class="timeline">
+  <div class="container">
+
+    <div class="timeline-block reveal">
+      <div class="timeline-img"><img src="img/jonathan-owner.jpg" alt="Jonathan i restaurangen" data-parallax="0.03"></div>
+      <div class="timeline-text">
+        <div class="timeline-year">Guadalajara, Mexiko</div>
+        <h2 class="timeline-heading">En kock från barnsben</h2>
+        <p>Jonathan började arbeta hos en slaktare vid tio års ålder. Vid 17 öppnade han sin första taquería i Guadalajara – Mexikos kulinariska hjärta. Varje ingrediens har sin historia, varje rätt förtjänar respekt.</p>
+        <p>Denna tidiga erfarenhet formade hans syn på matlagning: inga genvägar, bara äkta smak och hantverkskunnande.</p>
+      </div>
+    </div>
+
+    <div class="timeline-block reveal">
+      <div class="timeline-img"><img src="img/burrito-cocktails-fiesta.webp" alt="Cocktails och burrito" data-parallax="0.03"></div>
+      <div class="timeline-text">
+        <div class="timeline-year">Isla Holbox, Karibien</div>
+        <h2 class="timeline-heading">Äventyr i Karibien</h2>
+        <p>Jonathan tog nästa steg till Holbox – en liten ö känd för avslappnad atmosfär och färska skaldjur. Där öppnade han en ny taquería som snabbt blev en lokal favorit.</p>
+        <p>Det var också på Holbox han mötte sin svenska fru. Tillsammans planerade de en framtid som skulle ta honom över Atlanten.</p>
+      </div>
+    </div>
+
+    <div class="timeline-block reveal">
+      <div class="timeline-img"><img src="img/interior-mural-bar.webp" alt="Xulo interiör med kaktusmålning" data-parallax="0.03"></div>
+      <div class="timeline-text">
+        <div class="timeline-year">17 juni 2021 · Stockholm</div>
+        <h2 class="timeline-heading">17 dagar till Xulo</h2>
+        <p>Jonathan fick nycklarna till lokalen och på bara 17 dagar förvandlade han den till en fullt fungerande restaurang – målning, inredning, utrustning, meny, allt med egna händer.</p>
+        <p>Varför så snabbt? "Jag ville att folk skulle smaka på riktig mexikansk mat så fort som möjligt."</p>
+      </div>
+    </div>
+
+    <div class="timeline-block reveal">
+      <div class="timeline-img"><img src="img/jonathan-exterior.jpg" alt="Jonathan utanför Xulo" data-parallax="0.03"></div>
+      <div class="timeline-text">
+        <div class="timeline-year">Idag · Luntmakargatan 44</div>
+        <h2 class="timeline-heading">Allt lagas från grunden</h2>
+        <p>Varje dag efter kl 16 gör Jonathan handgjorda majstortillas. Menyn är inte bara en lista med rätter – det är hans familjehistoria. Hans dotter älskar quesadillas. Hans fru, kärleksfullt kallad "La Güera", inspirerar säsongsrätterna.</p>
+        <p>Varje gäst som kliver in på Xulo får en smak av Guadalajara och en dos av den passion som drivit Jonathan sedan han var tio.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="quote-section">
+  <div class="container">
+    <blockquote class="reveal">"Jag bryr mig inte om jag tjänar mycket pengar. Jag bryr mig om att folk kommer till Xulo och får ett gott intryck."</blockquote>
+    <cite class="reveal reveal-delay-1">– Jonathan, grundare av Xulo</cite>
+  </div>
+</section>
+
+<section class="values">
+  <div class="container">
+    <div class="section-label reveal">Vad vi står för</div>
+    <h2 class="section-title reveal reveal-delay-1">Xulos Filosofi</h2>
+    <div class="values-grid">
+      <div class="value-card reveal">
+        <div class="value-number">100%</div>
+        <h3>Från Grunden</h3>
+        <p>Allt lagas från scratch varje dag. Inga halvfabrikat, inga genvägar.</p>
+      </div>
+      <div class="value-card reveal reveal-delay-1">
+        <div class="value-number">17</div>
+        <h3>Dagar att Bygga</h3>
+        <p>Jonathan byggde hela restaurangen på 17 dagar med sina egna händer.</p>
+      </div>
+      <div class="value-card reveal reveal-delay-2">
+        <div class="value-number">GF</div>
+        <h3>Glutenfritt & Veganskt</h3>
+        <p>Hela menyn är glutenfri med veganska alternativ för alla rätter.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <img src="img/xulo-logo-dark.png" alt="Xulo" class="footer-brand-logo">
+      <div class="footer-tagline">Cocina de México · Stockholm</div>
+    </div>
+    <div class="footer-grid">
+      <div class="footer-col"><h4>Besök</h4><a href="hem.html">Hem</a><a href="meny.html">Meny</a><a href="lunch.html">Lunch</a><a href="var-historia.html">Vår Historia</a></div>
+      <div class="footer-col"><h4>Mer</h4><a href="catering.html">Catering</a><a href="kontakt.html">Kontakt</a><a href="#">Integritetspolicy</a></div>
+      <div class="footer-col"><h4>Följ Oss</h4><a href="#">Instagram</a><a href="#">Facebook</a></div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span class="footer-year">2026</span> Xulo AB · Org.nr 559317-1548</span>
+      <span>Powered by RiseRank</span>
+      <span>Torsgatan 49, 113 37 Stockholm</span>
+    </div>
+  </div>
+</footer>
+
+<script src="shared.js"></script>
+
+<!-- Tweaks -->
+<script>
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "footerLogoHeight": 48,
+  "poweredByOpacity": 0.5,
+  "headingColor": "#1A1A1A",
+  "accentColor": "#E9177C",
+  "greenHue": 155,
+  "greenChroma": 0.08,
+  "greenLightness": 0.28,
+  "pageBg": "#FDF6ED"
+}/*EDITMODE-END*/;
+
+function applyTweaks(t) {
+  var fl = document.getElementById('footer-logo');
+  if (fl) fl.style.height = t.footerLogoHeight + 'px';
+  var fp = document.querySelector('.footer-powered');
+  if (fp) fp.style.opacity = t.poweredByOpacity;
+  document.querySelectorAll('.timeline-heading').forEach(el => el.style.color = t.headingColor);
+  document.querySelectorAll('.value-number, .timeline-year').forEach(el => el.style.color = t.accentColor);
+  // Green tint
+  const greenColor = `oklch(${t.greenLightness} ${t.greenChroma} ${t.greenHue})`;
+  const greenLight = `oklch(${Math.min(t.greenLightness + 0.08, 0.95)} ${t.greenChroma} ${t.greenHue})`;
+  document.documentElement.style.setProperty('--green', greenColor);
+  document.documentElement.style.setProperty('--green-light', greenLight);
+  // Page background
+  document.documentElement.style.setProperty('--cream', t.pageBg);
+  document.body.style.background = t.pageBg;
+}
+
+let currentTweaks = { ...TWEAK_DEFAULTS };
+applyTweaks(currentTweaks);
+
+// Tweaks panel
+const panel = document.createElement('div');
+panel.id = 'tweaks-panel';
+panel.style.cssText = 'display:none;position:fixed;bottom:1.5rem;right:1.5rem;background:#fff;border-radius:16px;padding:1.5rem;box-shadow:0 8px 40px rgba(0,0,0,0.15);z-index:9999;width:280px;font-family:var(--font-body);font-size:0.85rem;';
+panel.innerHTML = `
+  <div style="font-family:var(--font-display);font-weight:800;font-size:1.1rem;margin-bottom:1rem;color:var(--dark)">Tweaks</div>
+  <label style="display:block;margin-bottom:1rem">
+    <span style="display:block;margin-bottom:0.3rem;font-weight:600">Footer Logo Size</span>
+    <input type="range" min="24" max="80" step="2" value="${currentTweaks.footerLogoHeight}" style="width:100%" oninput="updateTweak('footerLogoHeight',+this.value)">
+  </label>
+  <label style="display:block;margin-bottom:1rem">
+    <span style="display:block;margin-bottom:0.3rem;font-weight:600">Powered By Opacity</span>
+    <input type="range" min="0" max="1" step="0.05" value="${currentTweaks.poweredByOpacity}" style="width:100%" oninput="updateTweak('poweredByOpacity',+this.value)">
+  </label>
+  <label style="display:block;margin-bottom:1rem">
+    <span style="display:block;margin-bottom:0.3rem;font-weight:600">Heading Color</span>
+    <input type="color" value="${currentTweaks.headingColor}" style="width:100%;height:32px;border:none;cursor:pointer" oninput="updateTweak('headingColor',this.value)">
+  </label>
+  <label style="display:block;margin-bottom:0">
+    <span style="display:block;margin-bottom:0.3rem;font-weight:600">Accent Color</span>
+    <input type="color" value="${currentTweaks.accentColor}" style="width:100%;height:32px;border:none;cursor:pointer" oninput="updateTweak('accentColor',this.value)">
+  </label>
+  <div style="margin-top:1.25rem;padding-top:1rem;border-top:1px solid #eee;font-family:var(--font-display);font-weight:700;font-size:0.95rem;margin-bottom:0.75rem;color:var(--dark)">Green Tint</div>
+  <label style="display:block;margin-bottom:1rem">
+    <span style="display:flex;justify-content:space-between;margin-bottom:0.3rem;font-weight:600"><span>Hue</span><span id="tw-hue-val">${currentTweaks.greenHue}°</span></span>
+    <input type="range" min="0" max="360" step="1" value="${currentTweaks.greenHue}" style="width:100%" oninput="updateTweak('greenHue',+this.value);document.getElementById('tw-hue-val').textContent=this.value+'°'">
+  </label>
+  <label style="display:block;margin-bottom:1rem">
+    <span style="display:flex;justify-content:space-between;margin-bottom:0.3rem;font-weight:600"><span>Chroma</span><span id="tw-chr-val">${currentTweaks.greenChroma}</span></span>
+    <input type="range" min="0" max="0.2" step="0.005" value="${currentTweaks.greenChroma}" style="width:100%" oninput="updateTweak('greenChroma',+this.value);document.getElementById('tw-chr-val').textContent=(+this.value).toFixed(3)">
+  </label>
+  <label style="display:block;margin-bottom:1rem">
+    <span style="display:flex;justify-content:space-between;margin-bottom:0.3rem;font-weight:600"><span>Lightness</span><span id="tw-lgt-val">${currentTweaks.greenLightness}</span></span>
+    <input type="range" min="0.1" max="0.5" step="0.01" value="${currentTweaks.greenLightness}" style="width:100%" oninput="updateTweak('greenLightness',+this.value);document.getElementById('tw-lgt-val').textContent=(+this.value).toFixed(2)">
+  </label>
+  <label style="display:block;margin-bottom:0">
+    <span style="display:block;margin-bottom:0.3rem;font-weight:600">Page Background</span>
+    <input type="color" value="${currentTweaks.pageBg}" style="width:100%;height:32px;border:none;cursor:pointer" oninput="updateTweak('pageBg',this.value)">
+  </label>
+`;
+document.body.appendChild(panel);
+
+function updateTweak(key, val) {
+  currentTweaks[key] = val;
+  applyTweaks(currentTweaks);
+  window.parent.postMessage({ type: '__edit_mode_set_keys', edits: { [key]: val } }, '*');
+}
+
+window.addEventListener('message', (e) => {
+  if (e.data?.type === '__activate_edit_mode') panel.style.display = 'block';
+  if (e.data?.type === '__deactivate_edit_mode') panel.style.display = 'none';
+});
+window.parent.postMessage({ type: '__edit_mode_available' }, '*');
+</script>
+</body>
+</html>

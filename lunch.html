@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lunch – Xulo</title>
+  <link rel="stylesheet" href="styles.css?v=1776860350096">
+  <style>
+    .lunch-hero-img {
+      margin: -60px auto 0; position: relative; z-index: 2;
+      max-width: var(--max-width); padding: 0 clamp(1.5rem,4vw,4rem);
+    }
+    .lunch-hero-img img {
+      width: 100%; aspect-ratio: 16/7; object-fit: cover; object-position: center;
+      border-radius: 20px; box-shadow: 0 20px 56px rgba(11,59,42,0.12);
+    }
+
+    .lunch-content { padding: 4rem 0 6rem; }
+    .lunch-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: start; }
+
+    .lunch-text h2 {
+      font-family: var(--font-display); font-size: 2rem; font-weight: 800;
+      color: var(--dark); margin-bottom: 1rem; margin-top: 2.5rem;
+    }
+    .lunch-text h2:first-child { margin-top: 0; }
+    .lunch-text p { font-size: 1.05rem; color: var(--gray); line-height: 1.85; margin-bottom: 1rem; }
+
+    .lunch-sidebar { position: sticky; top: calc(var(--nav-height) + 2rem); }
+    .lunch-card {
+      background: #fff; border-radius: 20px; padding: 2.5rem 2rem;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.06); margin-bottom: 1.5rem;
+    }
+    .lunch-card h3 {
+      font-family: var(--font-display); font-size: 1.3rem; font-weight: 800;
+      color: var(--green); margin-bottom: 1rem;
+    }
+    .lunch-card p { font-size: 0.95rem; color: var(--gray); line-height: 1.7; margin-bottom: 0.5rem; }
+    .lunch-card strong { color: var(--dark); }
+
+    .lunch-price {
+      font-family: var(--font-display); font-size: 2.5rem; font-weight: 800;
+      color: var(--magenta); margin: 1rem 0 0.25rem;
+    }
+    .lunch-price-note { font-size: 0.85rem; color: var(--gray); }
+
+    .lunch-sample { margin-top: 2rem; }
+    .lunch-sample h3 {
+      font-family: var(--font-display); font-size: 1.15rem; font-weight: 700;
+      color: var(--dark); margin-bottom: 1rem;
+    }
+    .sample-item {
+      padding: 1rem 0; border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    .sample-item:last-child { border-bottom: none; }
+    .sample-item-name { font-weight: 600; color: var(--dark); margin-bottom: 0.2rem; }
+    .sample-item-desc { font-size: 0.9rem; color: var(--gray); }
+
+    .lunch-cta {
+      background: var(--green); padding: 5rem 0; text-align: center;
+    }
+    .lunch-cta h2 { font-family: var(--font-display); font-size: clamp(2rem,4vw,3rem); font-weight: 800; color: #fff; margin-bottom: 1rem; }
+    .lunch-cta p { color: rgba(255,255,255,0.8); font-size: 1.1rem; margin-bottom: 2rem; }
+
+    @media (max-width: 900px) {
+      .lunch-grid { grid-template-columns: 1fr; }
+      .lunch-sidebar { position: static; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="site-nav nav--scrolled">
+  <div class="nav-inner">
+    <a href="hem.html"><img src="img/xulo-logo-dark.png" alt="Xulo" class="nav-logo-img"></a>
+    <ul class="nav-links">
+      <li><a href="hem.html">Hem</a></li><li><a href="meny.html">Meny</a></li>
+      <li><a href="var-historia.html">Vår Historia</a></li><li><a href="catering.html">Catering</a></li>
+      <li><a href="lunch.html" class="active">Lunch</a></li><li><a href="kontakt.html">Kontakt</a></li>
+      <li><a href="#" class="nav-cta">BOKA BORD</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Meny"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu"><button class="mobile-close" aria-label="Stäng">&times;</button><a href="hem.html">Hem</a><a href="meny.html">Meny</a><a href="var-historia.html">Vår Historia</a><a href="catering.html">Catering</a><a href="lunch.html">Lunch</a><a href="kontakt.html">Kontakt</a><a href="#" class="btn btn--magenta" style="margin-top:1rem">Boka Bord</a></div>
+
+<section class="page-hero">
+  <div class="container">
+    <h1>Lunch</h1>
+    <p>Snabb, fräsch och autentisk mexikansk lunch i Vasastan</p>
+  </div>
+</section>
+
+<div class="lunch-hero-img reveal">
+  <img src="img/tacos-blue-plate.webp" alt="Xulo lunch">
+</div>
+
+<section class="lunch-content">
+  <div class="container">
+    <div class="lunch-grid">
+      <div class="lunch-text">
+        <h2 class="reveal">Välkommen på Lunch</h2>
+        <p class="reveal">Xulo serverar autentisk mexikansk lunch varje vardag. Allt lagas från grunden med färska råvaror – handgjorda majstortillas, färska salsas, och rätter som tar dig direkt till Mexiko.</p>
+        <p class="reveal">Lunchmenyn varierar veckovis och inkluderar alltid vegetariska och veganska alternativ. Hela menyn är glutenfri.</p>
+
+        <h2 class="reveal">Så Funkar Det</h2>
+        <p class="reveal">Välj en huvudrätt från dagens meny. Alla luncher serveras med tillbehör och en dryck. Walk-in välkomnas, men du kan även ringa och reservera bord i förväg.</p>
+
+        <div class="lunch-sample reveal">
+          <h3>Exempel från Lunchmenyn</h3>
+          <div class="sample-item">
+            <div class="sample-item-name">Tacos al Pastor</div>
+            <div class="sample-item-desc">Marinerad fläsk med ananas, koriander & salsa verde. 3 st.</div>
+          </div>
+          <div class="sample-item">
+            <div class="sample-item-name">Birria Quesadillas</div>
+            <div class="sample-item-desc">Långkokt nötkött med ost i handgjord tortilla, med consommé.</div>
+          </div>
+          <div class="sample-item">
+            <div class="sample-item-name">Enchiladas Verdes (Vegan)</div>
+            <div class="sample-item-desc">Tortillas med svampfyllning, salsa verde & vegansk crema.</div>
+          </div>
+          <div class="sample-item">
+            <div class="sample-item-name">Ceviche Mazatlán</div>
+            <div class="sample-item-desc">Dagsfärsk fisk med lime, tomat, avokado. Serveras med tostadas.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lunch-sidebar">
+        <div class="lunch-card reveal">
+          <h3>Lunchtider</h3>
+          <p><strong>Måndag–Fredag</strong></p>
+          <p>11:00 – 14:00</p>
+          <div class="lunch-price">139 kr</div>
+          <div class="lunch-price-note">Inkl. dryck & tillbehör</div>
+        </div>
+        <div class="lunch-card reveal reveal-delay-1">
+          <h3>Hitta Hit</h3>
+          <p><strong>Luntmakargatan 44</strong></p>
+          <p>113 37 Stockholm</p>
+          <p style="margin-top:0.75rem"><strong>Telefon</strong></p>
+          <p>08-462 99 99</p>
+        </div>
+        <a href="#" class="btn btn--magenta reveal reveal-delay-2" style="width:100%;justify-content:center">Boka Bord</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="lunch-cta">
+  <div class="container">
+    <h2 class="reveal">Se Hela Menyn</h2>
+    <p class="reveal reveal-delay-1">Utforska vårt fulla utbud av rätter och drycker</p>
+    <a href="meny.html" class="btn btn--magenta reveal reveal-delay-2">Till Menyn</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <img src="img/xulo-logo-dark.png" alt="Xulo" class="footer-brand-logo">
+      <div class="footer-tagline">Cocina de México · Stockholm</div>
+    </div>
+    <div class="footer-grid">
+      <div class="footer-col"><h4>Besök</h4><a href="hem.html">Hem</a><a href="meny.html">Meny</a><a href="lunch.html">Lunch</a><a href="var-historia.html">Vår Historia</a></div>
+      <div class="footer-col"><h4>Mer</h4><a href="catering.html">Catering</a><a href="kontakt.html">Kontakt</a><a href="#">Integritetspolicy</a></div>
+      <div class="footer-col"><h4>Följ Oss</h4><a href="#">Instagram</a><a href="#">Facebook</a></div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span class="footer-year">2026</span> Xulo AB · Org.nr 559317-1548</span>
+      <span>Powered by RiseRank</span>
+      <span>Torsgatan 49, 113 37 Stockholm</span>
+    </div>
+  </div>
+</footer>
+<script src="shared.js"></script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catering – Xulo</title>
+  <link rel="stylesheet" href="styles.css?v=1776860350096">
+  <style>
+    .catering-intro { padding: 4rem 0 6rem; }
+    .catering-intro-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-top: 3rem;
+    }
+    .catering-intro-img { border-radius: 20px; overflow: hidden; box-shadow: 0 20px 56px rgba(11,59,42,0.12); }
+    .catering-intro-img img { width: 100%; height: 420px; object-fit: cover; }
+    .catering-intro-text p { font-size: 1.1rem; color: var(--gray); line-height: 1.85; margin-bottom: 1.25rem; }
+
+    .packages { padding: 6rem 0; background: #fff; }
+    .packages-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; }
+    .package-card {
+      border: 2px solid rgba(11,59,42,0.08); border-radius: 20px; padding: 2.5rem 2rem;
+      transition: all 0.3s var(--ease-out); position: relative; overflow: hidden;
+    }
+    .package-card:hover { border-color: var(--green); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(11,59,42,0.1); }
+    .package-card.featured { background: var(--green); color: #fff; border-color: var(--green); }
+    .package-card.featured .package-price, .package-card.featured h3 { color: #fff; }
+    .package-card.featured p { color: rgba(255,255,255,0.8); }
+    .package-card.featured li { color: rgba(255,255,255,0.85); }
+    .package-card.featured li::before { color: var(--yellow); }
+    .package-tag {
+      position: absolute; top: 1.25rem; right: 1.25rem;
+      background: var(--magenta); color: #fff; font-size: 0.7rem; font-weight: 700;
+      padding: 0.3rem 0.8rem; border-radius: 100px; letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .package-card h3 { font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; color: var(--dark); margin-bottom: 0.5rem; }
+    .package-price { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: var(--magenta); margin-bottom: 1.25rem; }
+    .package-card p { font-size: 0.95rem; color: var(--gray); line-height: 1.7; margin-bottom: 1.5rem; }
+    .package-card ul { display: flex; flex-direction: column; gap: 0.5rem; }
+    .package-card li { font-size: 0.9rem; color: var(--gray); padding-left: 1.25rem; position: relative; }
+    .package-card li::before { content: '✓'; position: absolute; left: 0; color: var(--green); font-weight: 700; }
+
+    .how-it-works { padding: 6rem 0; }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; }
+    .step { text-align: center; }
+    .step-num {
+      width: 56px; height: 56px; border-radius: 50%; background: var(--green); color: #fff;
+      font-family: var(--font-display); font-size: 1.3rem; font-weight: 800;
+      display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem;
+    }
+    .step h3 { font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .step p { font-size: 0.95rem; color: var(--gray); line-height: 1.7; max-width: 280px; margin: 0 auto; }
+
+    .catering-cta { background: var(--green); padding: 5rem 0; text-align: center; }
+    .catering-cta h2 { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: #fff; margin-bottom: 1rem; }
+    .catering-cta p { color: rgba(255,255,255,0.8); font-size: 1.1rem; margin-bottom: 2.5rem; }
+    .catering-cta .btn--magenta { font-size: 1.1rem; padding: 1.1rem 2.5rem; }
+
+    @media (max-width: 900px) {
+      .catering-intro-grid { grid-template-columns: 1fr; }
+      .catering-intro-img img { height: 300px; }
+      .packages-grid { grid-template-columns: 1fr; max-width: 440px; margin-left: auto; margin-right: auto; }
+      .steps { grid-template-columns: 1fr; max-width: 340px; margin-left: auto; margin-right: auto; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="site-nav nav--scrolled">
+  <div class="nav-inner">
+    <a href="hem.html"><img src="img/xulo-logo-dark.png" alt="Xulo" class="nav-logo-img"></a>
+    <ul class="nav-links">
+      <li><a href="hem.html">Hem</a></li><li><a href="meny.html">Meny</a></li>
+      <li><a href="var-historia.html">Vår Historia</a></li><li><a href="catering.html" class="active">Catering</a></li>
+      <li><a href="lunch.html">Lunch</a></li><li><a href="kontakt.html">Kontakt</a></li>
+      <li><a href="#" class="nav-cta">BOKA BORD</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Meny"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu"><button class="mobile-close" aria-label="Stäng">&times;</button><a href="hem.html">Hem</a><a href="meny.html">Meny</a><a href="var-historia.html">Vår Historia</a><a href="catering.html">Catering</a><a href="lunch.html">Lunch</a><a href="kontakt.html">Kontakt</a><a href="#" class="btn btn--magenta" style="margin-top:1rem">Boka Bord</a></div>
+
+<section class="page-hero">
+  <div class="container">
+    <h1>Catering</h1>
+    <p>Ta med Xulo till ditt event – äkta mexikansk mat som imponerar</p>
+  </div>
+</section>
+
+<section class="catering-intro">
+  <div class="container">
+    <div class="catering-intro-grid">
+      <div class="catering-intro-img reveal"><img src="img/feast-spread-overhead.webp" alt="Mexikansk catering"></div>
+      <div class="catering-intro-text">
+        <div class="section-label reveal">Mexikansk Catering</div>
+        <h2 class="section-title reveal reveal-delay-1">Fira med <em>äkta smaker</em></h2>
+        <p class="reveal reveal-delay-2">Planerar du en fest, företagsevent, eller privat sammankomst? Xulo erbjuder catering med samma passion och kvalitet som vi serverar på restaurangen.</p>
+        <p class="reveal reveal-delay-2">Varje rätt lagas från grunden med färska råvaror. Vi anpassar menyn efter dina önskemål – från intima middagar till stora firanden.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="packages">
+  <div class="container">
+    <div style="text-align:center">
+      <div class="section-label reveal">Paket</div>
+      <h2 class="section-title reveal reveal-delay-1">Välj Ditt Upplägg</h2>
+    </div>
+    <div class="packages-grid">
+      <div class="package-card reveal">
+        <h3>Taco Bar</h3>
+        <div class="package-price">Från 250 kr/pers</div>
+        <p>Vårt mest populära format – perfekt för mingel och fester.</p>
+        <ul>
+          <li>Handgjorda tortillas</li>
+          <li>3 fyllningar att välja</li>
+          <li>Guacamole & salsa</li>
+          <li>Tillbehör & garnering</li>
+          <li>Minst 15 personer</li>
+        </ul>
+      </div>
+      <div class="package-card featured reveal reveal-delay-1">
+        <div class="package-tag">Populärast</div>
+        <h3>Fiesta Completa</h3>
+        <div class="package-price">Från 395 kr/pers</div>
+        <p>Helkväll med förrätt, tacos, sides och dessert.</p>
+        <ul>
+          <li>Guacamole & ceviche</li>
+          <li>Taco bar med 4 fyllningar</li>
+          <li>Elotes & bönor</li>
+          <li>Churros med chokladsås</li>
+          <li>Personal ingår</li>
+        </ul>
+      </div>
+      <div class="package-card reveal reveal-delay-2">
+        <h3>Anpassat Meny</h3>
+        <div class="package-price">Offert</div>
+        <p>Skräddarsydd meny för ditt speciella tillfälle.</p>
+        <ul>
+          <li>Helt anpassat upplägg</li>
+          <li>Veganskt & glutenfritt</li>
+          <li>Cocktail-paket möjligt</li>
+          <li>Leverans eller full service</li>
+          <li>Kontakta oss för offert</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="how-it-works">
+  <div class="container">
+    <div style="text-align:center">
+      <div class="section-label reveal">Så Funkar Det</div>
+      <h2 class="section-title reveal reveal-delay-1">Tre enkla steg</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num">1</div>
+        <h3>Kontakta Oss</h3>
+        <p>Berätta om ditt event – datum, antal gäster, och önskemål. Minst 5 dagars framförhållning.</p>
+      </div>
+      <div class="step reveal reveal-delay-1">
+        <div class="step-num">2</div>
+        <h3>Vi Planerar</h3>
+        <p>Vi sätter ihop en meny och offert anpassad efter dina gäster och din budget.</p>
+      </div>
+      <div class="step reveal reveal-delay-2">
+        <div class="step-num">3</div>
+        <h3>Vi Levererar</h3>
+        <p>Allt lagas färskt och levereras till din plats. Självservering eller med personal.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="catering-cta">
+  <div class="container">
+    <h2 class="reveal">Boka Din Catering</h2>
+    <p class="reveal reveal-delay-1">Ring oss på 08-462 99 99 eller mejla catering@xulo.se</p>
+    <a href="mailto:catering@xulo.se" class="btn btn--magenta reveal reveal-delay-2">Skicka Förfrågan</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <img src="img/xulo-logo-dark.png" alt="Xulo" class="footer-brand-logo">
+      <div class="footer-tagline">Cocina de México · Stockholm</div>
+    </div>
+    <div class="footer-grid">
+      <div class="footer-col"><h4>Besök</h4><a href="hem.html">Hem</a><a href="meny.html">Meny</a><a href="lunch.html">Lunch</a><a href="var-historia.html">Vår Historia</a></div>
+      <div class="footer-col"><h4>Mer</h4><a href="catering.html">Catering</a><a href="kontakt.html">Kontakt</a><a href="#">Integritetspolicy</a></div>
+      <div class="footer-col"><h4>Följ Oss</h4><a href="#">Instagram</a><a href="#">Facebook</a></div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span class="footer-year">2026</span> Xulo AB · Org.nr 559317-1548</span>
+      <span>Powered by RiseRank</span>
+      <span>Torsgatan 49, 113 37 Stockholm</span>
+    </div>
+  </div>
+</footer>
+<script src="shared.js"></script>
+</body>
+</html>

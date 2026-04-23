@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vår Historia – Xulo (Print)</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Page-specific styles from original */
+    .timeline { padding: 3rem 0; }
+    .timeline-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      margin-bottom: 3rem;
+    }
+    .timeline-block:nth-child(even) { direction: rtl; }
+    .timeline-block:nth-child(even) > * { direction: ltr; }
+    .timeline-img {
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .timeline-img img { width:100%; aspect-ratio:4/5; object-fit:cover; object-position:top; }
+    .timeline-year {
+      font-family: var(--font-display);
+      font-size: 0.8rem; font-weight: 700;
+      color: var(--magenta);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    .timeline-heading {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--dark);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+    .timeline-text p {
+      font-size: 0.95rem;
+      color: var(--gray);
+      line-height: 1.75;
+      margin-bottom: 1rem;
+    }
+
+    .quote-section {
+      background: var(--green);
+      padding: 4rem 2rem;
+      text-align: center;
+      border-radius: 16px;
+      margin: 2rem auto;
+      max-width: var(--max-width);
+    }
+    .quote-section blockquote {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.35;
+      max-width: 800px;
+      margin: 0 auto 1.5rem;
+    }
+    .quote-section cite {
+      font-family: var(--font-body);
+      font-style: normal;
+      color: var(--yellow);
+      font-size: 1rem;
+    }
+
+    .values { padding: 4rem 0; text-align: center; }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .value-card {
+      padding: 2rem 1.5rem;
+      background: #fff;
+      border-radius: 12px;
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+    .value-number {
+      font-family: var(--font-display);
+      font-size: 2.5rem; font-weight: 800;
+      color: var(--magenta);
+      margin-bottom: 0.4rem;
+    }
+    .value-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.1rem; font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 0.4rem;
+    }
+    .value-card p { font-size: 0.9rem; color: var(--gray); line-height: 1.6; }
+
+    /* ---- PRINT OVERRIDES ---- */
+    .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+    .site-nav, .mobile-menu, .site-footer, .hero-scroll { display: none !important; }
+
+    * { animation: none !important; transition: none !important; }
+    body { background: #fff; }
+
+    .page-hero {
+      padding: 3rem 0 2rem;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    @media print {
+      @page { size: A4 portrait; margin: 1.5cm; }
+
+      body { background: #fff; }
+
+      .page-hero {
+        background: var(--green) !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        break-after: avoid;
+      }
+      .page-hero::after { display: none; }
+
+      .quote-section {
+        background: var(--green) !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .value-card {
+        border: 1px solid #ddd;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .timeline-block {
+        break-inside: avoid;
+        margin-bottom: 2rem;
+      }
+
+      .timeline-img {
+        box-shadow: none;
+      }
+
+      .values {
+        break-before: page;
+      }
+
+      .values-grid {
+        break-inside: avoid;
+      }
+
+      img { max-height: 350px; }
+    }
+  </style>
+</head>
+<body>
+
+<section class="page-hero">
+  <div class="container">
+    <h1>Vår Historia</h1>
+    <p>Från Guadalajara till Stockholm – driven av passion för äkta smaker</p>
+  </div>
+</section>
+
+<section class="timeline">
+  <div class="container">
+
+    <div class="timeline-block">
+      <div class="timeline-img"><img src="img/jonathan-owner.jpg" alt="Jonathan i restaurangen"></div>
+      <div class="timeline-text">
+        <div class="timeline-year">Guadalajara, Mexiko</div>
+        <h2 class="timeline-heading">En kock från barnsben</h2>
+        <p>Jonathan började arbeta hos en slaktare vid tio års ålder. Vid 17 öppnade han sin första taquería i Guadalajara – Mexikos kulinariska hjärta. Varje ingrediens har sin historia, varje rätt förtjänar respekt.</p>
+        <p>Denna tidiga erfarenhet formade hans syn på matlagning: inga genvägar, bara äkta smak och hantverkskunnande.</p>
+      </div>
+    </div>
+
+    <div class="timeline-block">
+      <div class="timeline-img"><img src="img/burrito-cocktails-fiesta.webp" alt="Cocktails och burrito"></div>
+      <div class="timeline-text">
+        <div class="timeline-year">Isla Holbox, Karibien</div>
+        <h2 class="timeline-heading">Äventyr i Karibien</h2>
+        <p>Jonathan tog nästa steg till Holbox – en liten ö känd för avslappnad atmosfär och färska skaldjur. Där öppnade han en ny taquería som snabbt blev en lokal favorit.</p>
+        <p>Det var också på Holbox han mötte sin svenska fru. Tillsammans planerade de en framtid som skulle ta honom över Atlanten.</p>
+      </div>
+    </div>
+
+    <div class="timeline-block">
+      <div class="timeline-img"><img src="img/interior-mural-bar.webp" alt="Xulo interiör med kaktusmålning"></div>
+      <div class="timeline-text">
+        <div class="timeline-year">17 juni 2021 · Stockholm</div>
+        <h2 class="timeline-heading">17 dagar till Xulo</h2>
+        <p>Jonathan fick nycklarna till lokalen och på bara 17 dagar förvandlade han den till en fullt fungerande restaurang – målning, inredning, utrustning, meny, allt med egna händer.</p>
+        <p>Varför så snabbt? "Jag ville att folk skulle smaka på riktig mexikansk mat så fort som möjligt."</p>
+      </div>
+    </div>
+
+    <div class="timeline-block">
+      <div class="timeline-img"><img src="img/jonathan-exterior.jpg" alt="Jonathan utanför Xulo"></div>
+      <div class="timeline-text">
+        <div class="timeline-year">Idag · Luntmakargatan 44</div>
+        <h2 class="timeline-heading">Allt lagas från grunden</h2>
+        <p>Varje dag efter kl 16 gör Jonathan handgjorda majstortillas. Menyn är inte bara en lista med rätter – det är hans familjehistoria. Hans dotter älskar quesadillas. Hans fru, kärleksfullt kallad "La Güera", inspirerar säsongsrätterna.</p>
+        <p>Varje gäst som kliver in på Xulo får en smak av Guadalajara och en dos av den passion som drivit Jonathan sedan han var tio.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="quote-section">
+  <div class="container">
+    <blockquote>"Jag bryr mig inte om jag tjänar mycket pengar. Jag bryr mig om att folk kommer till Xulo och får ett gott intryck."</blockquote>
+    <cite>– Jonathan, grundare av Xulo</cite>
+  </div>
+</section>
+
+<section class="values">
+  <div class="container">
+    <div class="section-label">Vad vi står för</div>
+    <h2 class="section-title">Xulos Filosofi</h2>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-number">100%</div>
+        <h3>Från Grunden</h3>
+        <p>Allt lagas från scratch varje dag. Inga halvfabrikat, inga genvägar.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-number">17</div>
+        <h3>Dagar att Bygga</h3>
+        <p>Jonathan byggde hela restaurangen på 17 dagar med sina egna händer.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-number">GF</div>
+        <h3>Glutenfritt & Veganskt</h3>
+        <p>Hela menyn är glutenfri med veganska alternativ för alla rätter.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+// Auto-print after fonts load
+document.fonts.ready.then(() => {
+  setTimeout(() => { window.print(); }, 500);
+});
+</script>
+</body>
+</html>
