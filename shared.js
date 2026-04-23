@@ -54,11 +54,11 @@ document.addEventListener('DOMContentLoaded', () => {
     onScroll();
   }
 
-  // --- Hero carousel (click a thumb to swap hero image) ---
-  const carousel = document.getElementById('heroCarousel');
-  const thumbs = document.querySelectorAll('.hero-thumb');
-  if (carousel && thumbs.length) {
-    const slides = carousel.querySelectorAll('.hero-slide');
+  // --- Founder photo carousel (click a thumb to swap story image) ---
+  const founder = document.getElementById('founderCarousel');
+  if (founder) {
+    const slides = founder.querySelectorAll('.story-slide');
+    const thumbs = founder.querySelectorAll('.story-thumb');
     thumbs.forEach(thumb => {
       thumb.addEventListener('click', () => {
         const i = Number(thumb.dataset.index);
@@ -66,6 +66,20 @@ document.addEventListener('DOMContentLoaded', () => {
         thumbs.forEach((t, idx) => t.classList.toggle('is-active', idx === i));
       });
     });
+  }
+
+  // --- Gallery carousel prev/next ---
+  const galleryTrack = document.querySelector('.gallery-track');
+  const galleryPrev = document.querySelector('.gallery-nav--prev');
+  const galleryNext = document.querySelector('.gallery-nav--next');
+  if (galleryTrack && galleryPrev && galleryNext) {
+    const scrollByCard = (dir) => {
+      const card = galleryTrack.querySelector('.gallery-card');
+      const step = card ? card.getBoundingClientRect().width + 20 : 360;
+      galleryTrack.scrollBy({ left: dir * step, behavior: 'smooth' });
+    };
+    galleryPrev.addEventListener('click', () => scrollByCard(-1));
+    galleryNext.addEventListener('click', () => scrollByCard(1));
   }
 
   // --- Footer year ---

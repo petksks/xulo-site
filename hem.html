@@ -254,12 +254,8 @@
 
 <!-- Hero -->
 <section class="hero">
-  <div class="hero-bg" id="heroCarousel">
-    <img class="hero-slide is-active" src="img/interior-warm-window.webp" alt="Xulo restaurang interiör">
-    <img class="hero-slide" src="img/interior-mural-bar.webp" alt="Xulo bar & mural">
-    <img class="hero-slide" src="img/exterior-terrace-signage.webp" alt="Xulo exteriör & terrass">
-    <img class="hero-slide" src="img/feast-spread-overhead.webp" alt="Maträtter uppifrån">
-    <img class="hero-slide" src="img/jonathan-gomez-xulo.jpg" alt="Jonathan Gomez – Xulo">
+  <div class="hero-bg">
+    <img src="img/interior-warm-window.webp" alt="Xulo restaurang interiör">
     <div class="hero-overlay"></div>
   </div>
   <div class="hero-content">
@@ -267,22 +263,22 @@
     <p class="hero-tagline">Autentisk Mexikansk Mat · Stockholm</p>
     <a href="#" class="hero-cta">Boka Bord</a>
   </div>
-  <div class="hero-picker" role="tablist" aria-label="Välj hero-bild">
-    <button class="hero-thumb is-active" type="button" data-index="0" aria-label="Interiör"><img src="img/interior-warm-window.webp" alt=""></button>
-    <button class="hero-thumb" type="button" data-index="1" aria-label="Bar"><img src="img/interior-mural-bar.webp" alt=""></button>
-    <button class="hero-thumb" type="button" data-index="2" aria-label="Exteriör"><img src="img/exterior-terrace-signage.webp" alt=""></button>
-    <button class="hero-thumb" type="button" data-index="3" aria-label="Mat"><img src="img/feast-spread-overhead.webp" alt=""></button>
-    <button class="hero-thumb" type="button" data-index="4" aria-label="Jonathan"><img src="img/jonathan-gomez-xulo.jpg" alt=""></button>
-  </div>
 </section>
 
 <!-- Story -->
 <section class="story">
   <div class="container">
     <div class="story-grid">
-      <div class="story-img-wrap reveal">
-        <img src="img/jonathan-gomez-xulo.jpg" alt="Jonathan Gomez, grundare av Xulo" data-parallax="0.04">
+      <div class="story-img-wrap reveal" id="founderCarousel">
+        <img class="story-slide is-active" src="img/jonathan-gomez-xulo.jpg" alt="Jonathan Gomez, grundare av Xulo" data-parallax="0.04">
+        <img class="story-slide" src="img/jonathan-exterior.jpg" alt="Jonathan utanför Xulo" data-parallax="0.04">
+        <img class="story-slide" src="img/jonathan-owner.jpg" alt="Jonathan, ägare av Xulo" data-parallax="0.04">
         <div class="story-img-badge">Sedan 2021</div>
+        <div class="story-picker" role="tablist" aria-label="Välj foto av Jonathan">
+          <button class="story-thumb is-active" type="button" data-index="0" aria-label="Porträtt"><img src="img/jonathan-gomez-xulo.jpg" alt=""></button>
+          <button class="story-thumb" type="button" data-index="1" aria-label="Exteriör"><img src="img/jonathan-exterior.jpg" alt=""></button>
+          <button class="story-thumb" type="button" data-index="2" aria-label="Ägare"><img src="img/jonathan-owner.jpg" alt=""></button>
+        </div>
       </div>
       <div class="story-text">
         <div class="section-label reveal">Välkommen till Xulo</div>
@@ -334,7 +330,15 @@
       <div class="section-label reveal">Upplev Xulo</div>
       <h2 class="section-title reveal reveal-delay-1">Smaker & Stämning</h2>
     </div>
-    <a href="meny.html" class="btn btn--green reveal">Se Menyn</a>
+    <div class="gallery-actions">
+      <button class="gallery-nav gallery-nav--prev" type="button" aria-label="Föregående">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button class="gallery-nav gallery-nav--next" type="button" aria-label="Nästa">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+      <a href="meny.html" class="btn btn--green reveal">Se Menyn</a>
+    </div>
   </div>
   <div class="gallery-track">
     <div class="gallery-card"><img src="img/tacos-blue-plate.webp" alt="Tacos"></div>
