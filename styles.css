@@ -136,7 +136,16 @@ ul { list-style: none; }
   letter-spacing: 0.04em;
   transition: all 0.3s var(--ease-out);
   box-shadow: 0 4px 16px rgba(233,23,124,0.25);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 155px;
+  line-height: 1;
 }
+
+/* Group the two CTAs: extra separation from links, tight gap between CTAs */
+.nav-links li:nth-last-child(2) { margin-left: 1.25rem; }
+.nav-links li:last-child { margin-left: -1.25rem; }
 
 .nav-cta:hover {
   background: var(--magenta-dark);
