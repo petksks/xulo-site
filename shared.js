@@ -54,18 +54,22 @@ document.addEventListener('DOMContentLoaded', () => {
     onScroll();
   }
 
-  // --- Founder photo carousel (click a thumb to swap story image) ---
+  // --- Founder photo carousel (prev/next arrows + dots) ---
   const founder = document.getElementById('founderCarousel');
   if (founder) {
     const slides = founder.querySelectorAll('.story-slide');
-    const thumbs = founder.querySelectorAll('.story-thumb');
-    thumbs.forEach(thumb => {
-      thumb.addEventListener('click', () => {
-        const i = Number(thumb.dataset.index);
-        slides.forEach((s, idx) => s.classList.toggle('is-active', idx === i));
-        thumbs.forEach((t, idx) => t.classList.toggle('is-active', idx === i));
-      });
-    });
+    const dots = founder.querySelectorAll('.story-dot');
+    const prev = founder.querySelector('.story-arrow--prev');
+    const next = founder.querySelector('.story-arrow--next');
+    let current = 0;
+    const go = (i) => {
+      current = (i + slides.length) % slides.length;
+      slides.forEach((s, idx) => s.classList.toggle('is-active', idx === current));
+      dots.forEach((d, idx) => d.classList.toggle('is-active', idx === current));
+    };
+    prev?.addEventListener('click', () => go(current - 1));
+    next?.addEventListener('click', () => go(current + 1));
+    dots.forEach(dot => dot.addEventListener('click', () => go(Number(dot.dataset.index))));
   }
 
   // --- Gallery carousel prev/next ---
