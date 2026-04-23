@@ -54,6 +54,20 @@ document.addEventListener('DOMContentLoaded', () => {
     onScroll();
   }
 
+  // --- Hero carousel (click a thumb to swap hero image) ---
+  const carousel = document.getElementById('heroCarousel');
+  const thumbs = document.querySelectorAll('.hero-thumb');
+  if (carousel && thumbs.length) {
+    const slides = carousel.querySelectorAll('.hero-slide');
+    thumbs.forEach(thumb => {
+      thumb.addEventListener('click', () => {
+        const i = Number(thumb.dataset.index);
+        slides.forEach((s, idx) => s.classList.toggle('is-active', idx === i));
+        thumbs.forEach((t, idx) => t.classList.toggle('is-active', idx === i));
+      });
+    });
+  }
+
   // --- Footer year ---
   const yearEl = document.querySelector('.footer-year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();

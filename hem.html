@@ -246,8 +246,12 @@
 
 <!-- Hero -->
 <section class="hero">
-  <div class="hero-bg">
-    <img src="img/interior-warm-window.webp" alt="Xulo restaurang interiör">
+  <div class="hero-bg" id="heroCarousel">
+    <img class="hero-slide is-active" src="img/interior-warm-window.webp" alt="Xulo restaurang interiör">
+    <img class="hero-slide" src="img/interior-mural-bar.webp" alt="Xulo bar & mural">
+    <img class="hero-slide" src="img/exterior-terrace-signage.webp" alt="Xulo exteriör & terrass">
+    <img class="hero-slide" src="img/feast-spread-overhead.webp" alt="Maträtter uppifrån">
+    <img class="hero-slide" src="img/jonathan-gomez-xulo.jpg" alt="Jonathan Gomez – Xulo">
     <div class="hero-overlay"></div>
   </div>
   <div class="hero-content">
@@ -255,9 +259,12 @@
     <p class="hero-tagline">Autentisk Mexikansk Mat · Stockholm</p>
     <a href="#" class="hero-cta">Boka Bord</a>
   </div>
-  <div class="hero-scroll">
-    <span>Scrolla</span>
-    <div class="hero-scroll-line"></div>
+  <div class="hero-picker" role="tablist" aria-label="Välj hero-bild">
+    <button class="hero-thumb is-active" type="button" data-index="0" aria-label="Interiör"><img src="img/interior-warm-window.webp" alt=""></button>
+    <button class="hero-thumb" type="button" data-index="1" aria-label="Bar"><img src="img/interior-mural-bar.webp" alt=""></button>
+    <button class="hero-thumb" type="button" data-index="2" aria-label="Exteriör"><img src="img/exterior-terrace-signage.webp" alt=""></button>
+    <button class="hero-thumb" type="button" data-index="3" aria-label="Mat"><img src="img/feast-spread-overhead.webp" alt=""></button>
+    <button class="hero-thumb" type="button" data-index="4" aria-label="Jonathan"><img src="img/jonathan-gomez-xulo.jpg" alt=""></button>
   </div>
 </section>
 
