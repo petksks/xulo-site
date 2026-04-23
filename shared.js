@@ -72,20 +72,6 @@ document.addEventListener('DOMContentLoaded', () => {
     dots.forEach(dot => dot.addEventListener('click', () => go(Number(dot.dataset.index))));
   }
 
-  // --- Gallery carousel prev/next ---
-  const galleryTrack = document.querySelector('.gallery-track');
-  const galleryPrev = document.querySelector('.gallery-nav--prev');
-  const galleryNext = document.querySelector('.gallery-nav--next');
-  if (galleryTrack && galleryPrev && galleryNext) {
-    const scrollByCard = (dir) => {
-      const card = galleryTrack.querySelector('.gallery-card');
-      const step = card ? card.getBoundingClientRect().width + 20 : 360;
-      galleryTrack.scrollBy({ left: dir * step, behavior: 'smooth' });
-    };
-    galleryPrev.addEventListener('click', () => scrollByCard(-1));
-    galleryNext.addEventListener('click', () => scrollByCard(1));
-  }
-
   // --- Footer year ---
   const yearEl = document.querySelector('.footer-year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
