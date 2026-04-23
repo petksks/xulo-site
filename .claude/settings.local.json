@@ -3,7 +3,9 @@
     "allow": [
       "Bash(mkdir -p C:/Users/Ledig/.claude/commands)",
       "Bash(cp C:/Users/Ledig/Documents/riserank-web-software/.claude/commands/*.md C:/Users/Ledig/.claude/commands/)",
-      "Read(//c/Users/Ledig/.claude/**)"
+      "Read(//c/Users/Ledig/.claude/**)",
+      "Bash(mkdir -p C:/Users/Ledig/.claude/rules)",
+      "Bash(cp C:/Users/Ledig/Documents/riserank-web-software/.claude/rules/*.md C:/Users/Ledig/.claude/rules/)"
     ]
   }
 }
