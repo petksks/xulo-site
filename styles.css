@@ -639,9 +639,12 @@ ul { list-style: none; }
   overflow: hidden;
   scroll-snap-align: start;
   position: relative;
+  isolation: isolate;
+  background: #0b3b2a;
 }
 
 .gallery-card img {
+  display: block;
   width: 100%; height: 100%;
   object-fit: cover;
   transition: transform 0.6s var(--ease-out);
