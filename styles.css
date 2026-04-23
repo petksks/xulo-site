@@ -92,6 +92,10 @@ ul { list-style: none; }
   filter: brightness(0) invert(1);
 }
 
+.nav--scrolled .nav-logo-img {
+  filter: brightness(0);
+}
+
 .nav-links {
   display: flex;
   gap: 2rem;
